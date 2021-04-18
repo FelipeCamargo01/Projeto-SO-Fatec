@@ -1,1 +1,41 @@
-<zingchart-angular [config]="config" [height]="500"></zingchart-angular>
+<!-- <zingchart-angular [config]="config" [height]="500"></zingchart-angular> -->
+
+<h1 style="text-align: center; font-family: Courier, monospace">
+    Escalonamento Circular:
+</h1>
+
+<div id="chart-zingchart-1"></div>
+<!-- <div id={{chart.id}}></div> -->
+
+<div *ngIf="calculado">
+    
+    <span>
+        Tempo de Turnaround: 
+        <span *ngFor="let item of processos">
+            {{item.Nome}}: {{item.TempoTurnAround}} 
+        </span>
+    </span>
+    <br/>
+    <span>
+        Tempo médio de retorno: 
+        {{tempoMedioDeRetorno}}
+    </span>
+    <br/>
+    <span>
+        Tempo de espera: 
+
+        <span *ngFor="let item of processos">
+            {{item.Nome}}: {{item.TempoDeEspera}} 
+        </span>
+    </span>    
+    <br/>
+    <span>
+        Tempo médio de espera: 
+        {{tempoMedioDeEspera}}
+    </span>
+    <br/>
+    <span>
+        Tempo total de processador:
+        {{tempoTotalDoProcessador}}
+    </span>
+</div>
